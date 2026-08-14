@@ -4,7 +4,12 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        n = len(nums)
-        expected_sum = (n * (n+1))/2
-        actual_sum = sum(nums)
-        return expected_sum - actual_sum
+        #arrage the order
+        nums.sort()
+        #Check the number match the position
+        for i in range (len(nums)):
+            if nums[i] !=i:
+                return i
+        return len(nums)
+
+
